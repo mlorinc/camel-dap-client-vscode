@@ -33,6 +33,21 @@
 				"${workspaceFolder}/out/src/test/**/*.js"
 			],
 			"preLaunchTask": "npm: watch"
+		},
+		{
+			"name": "Debug UI test",
+			"program": "${workspaceFolder}/out/test/ui-test/launcher.js",
+			"request": "launch",
+			"args": [
+				"./out/test/ui-test/install.fsm.test.js"
+			],
+			"env": {
+				"DEBUG_UI_TEST": "true"
+			},
+			"skipFiles": [
+				"<node_internals>/**"
+			],
+			"type": "node"
 		}
 	]
 }
