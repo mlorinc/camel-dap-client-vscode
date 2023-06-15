@@ -1,0 +1,17 @@
+# camel-k: language=yaml
+
+# Write your routes here, for example:
+- from:
+    uri: "timer:yaml"
+    parameters:
+      period: "1000"
+    steps:
+      - set-body:
+          constant: "Camel K from yaml ui test"
+      - to: "direct:collector"
+- from:
+    uri: direct:collector
+    steps:
+      - log: "Received: ${body}"
+    
+    
